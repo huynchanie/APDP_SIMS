@@ -28,9 +28,11 @@ builder.Services.AddAuthentication("Cookies")
         options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     });
 
+
 builder.Services.AddAuthorization();
 
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
@@ -59,7 +61,15 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "admin",
+    pattern: "Admin/{controller=Admin}/{action=Index}/{id?}",
+    defaults: new { controller = "Admin" }
+);
+
+
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.Run();

@@ -164,10 +164,10 @@ D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets\msbuild.build.SI
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SIMS.props
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SIMS.props
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets.pack.json
-D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\SIMS.csproj.Up2Date
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\SIMS.dll
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\refint\SIMS.dll
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\SIMS.pdb
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\SIMS.genruntimeconfig.cache
 D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\ref\SIMS.dll
+D:\SE06303\Kì5\APDP\SIMS\SIMS\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

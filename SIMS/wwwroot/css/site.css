@@ -1,22 +1,52 @@
-html {
-  font-size: 14px;
-}
+/* Background */
+/*body {
+    
+    font-family: 'Poppins', sans-serif;
+}*/
 
-@media (min-width: 768px) {
-  html {
+/* Card Styling */
+/*.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}*/
+
+/* Custom Button */
+/*.custom-btn {
+    padding: 12px;
     font-size: 16px;
-  }
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    .custom-btn:hover {
+        transform: translateY(-2px);
+    }*/
+
+/* Social Buttons */
+/*.social-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+    .social-btn i {
+        font-size: 18px;
+        color: #555;
+    }
 
-body {
-  margin-bottom: 60px;
-}
+    .social-btn:hover {
+        background-color: #ddd;
+    }*/
+
+/* Text Styling */
+/*.text-muted {
+    font-size: 14px;
+}*/

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\img\\loggo.jpg",
+      "PackagePath": "staticwebassets\\img\\loggo.jpg"
+    },
+    {
       "Id": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -243,6 +247,10 @@
     {
       "Id": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\site.css",
+      "PackagePath": "staticwebassets\\site.css"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SIMS.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

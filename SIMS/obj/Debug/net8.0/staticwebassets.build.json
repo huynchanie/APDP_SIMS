@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dA3qqrm7oDuhKhO9LOBHfpcUO5zhZEe5bTdl1qjUJt4=",
+  "Hash": "L0FqygoTHyDF5G79mE4OCLXvw+5sCJzD5AOWcWwk4Ms=",
   "Source": "SIMS",
   "BasePath": "_content/SIMS",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "2ys3y2n1v2",
+      "Integrity": "Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\img\\loggo.jpg",
+      "SourceId": "SIMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\",
+      "BasePath": "_content/SIMS",
+      "RelativePath": "img/loggo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z567ebobsc",
+      "Integrity": "Ccu8WaBrciKRmcQiiwYbuFJ2p09i0omZQ/dCCLurRQg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\loggo.jpg"
     },
     {
       "Identity": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\js\\site.js",
@@ -1317,11 +1338,32 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\site.css",
+      "SourceId": "SIMS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\",
+      "BasePath": "_content/SIMS",
+      "RelativePath": "site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4aiy49iykp",
+      "Integrity": "DHl6VsU9jDgQT3GmsjpTASQRBojAmmQzmY5DCSkJ/fc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.css"
     }
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
+      "Route": "css/site.2ys3y2n1v2.css",
       "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1331,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "964"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:23:13 GMT"
+          "Value": "Mon, 24 Mar 2025 13:37:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,7 +1395,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
+          "Value": "2ys3y2n1v2"
         },
         {
           "Name": "label",
@@ -1361,7 +1403,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o="
         }
       ]
     },
@@ -1376,7 +1418,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "964"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1426,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:23:13 GMT"
+          "Value": "Mon, 24 Mar 2025 13:37:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1440,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o="
         }
       ]
     },
@@ -1481,6 +1523,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "img/loggo.jpg",
+      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\img\\loggo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ccu8WaBrciKRmcQiiwYbuFJ2p09i0omZQ/dCCLurRQg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 07:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ccu8WaBrciKRmcQiiwYbuFJ2p09i0omZQ/dCCLurRQg="
+        }
+      ]
+    },
+    {
+      "Route": "img/loggo.z567ebobsc.jpg",
+      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\img\\loggo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Ccu8WaBrciKRmcQiiwYbuFJ2p09i0omZQ/dCCLurRQg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 07:44:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z567ebobsc"
+        },
+        {
+          "Name": "label",
+          "Value": "img/loggo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Ccu8WaBrciKRmcQiiwYbuFJ2p09i0omZQ/dCCLurRQg="
         }
       ]
     },
@@ -6263,7 +6387,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:53:25 GMT"
+          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6308,7 +6432,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:53:25 GMT"
+          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6353,7 +6477,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:53:25 GMT"
+          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6390,7 +6514,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 23 Mar 2025 18:53:25 GMT"
+          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6401,6 +6525,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-zGHJjRvGslxleekKi+3PDKSFwvz4M6tXHtOGYUgJVNw="
+        }
+      ]
+    },
+    {
+      "Route": "site.4aiy49iykp.css",
+      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DHl6VsU9jDgQT3GmsjpTASQRBojAmmQzmY5DCSkJ/fc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 07:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4aiy49iykp"
+        },
+        {
+          "Name": "label",
+          "Value": "site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DHl6VsU9jDgQT3GmsjpTASQRBojAmmQzmY5DCSkJ/fc="
+        }
+      ]
+    },
+    {
+      "Route": "site.css",
+      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DHl6VsU9jDgQT3GmsjpTASQRBojAmmQzmY5DCSkJ/fc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 07:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DHl6VsU9jDgQT3GmsjpTASQRBojAmmQzmY5DCSkJ/fc="
         }
       ]
     }

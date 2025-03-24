@@ -1,9 +1,45 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to my App</h1>
-    <a asp-controller="Account" asp-action="Register">Register a new account</a>
-    <a asp-controller="Account" asp-action="Login">Login</a>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 border-0" style="width: 360px; border-radius: 20px;">
+        <div class="text-center">
+            <!-- Logo -->
+            <img src="img/loggo.jpg" alt="Logo" class="img-fluid mb-3" style="max-width: 300px;">
+
+            <!-- Welcome Message -->
+            <h4 class="fw-bold">Welcome !</h4>
+            <p class="text-muted">Create an account to get started</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-grid gap-2 mt-3">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-primary custom-btn">
+                Create Account
+            </a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary custom-btn">
+                Login
+            </a>
+        </div>
+
+        <!-- Social Login -->
+        <div class="text-center mt-4">
+            <p class="text-muted">Sign in with another account</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="social-btn"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-btn"><i class="bi bi-google"></i></a>
+            </div>
+        </div>
+    </div>
+
 </div>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+
