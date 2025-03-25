@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using SIMS.Data;
 using SIMS.Facades;
 using SIMS.Repositories;
@@ -14,9 +15,11 @@ builder.Services.AddDbContext<DataContext>(options =>
 //Add Repository
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 
 //Add Facade
 builder.Services.AddScoped<IUserFacade, UserFacade>();
+builder.Services.AddScoped<ICourseFacade, CourseFacade>();
 // Add session
 builder.Services.AddSession();
 
@@ -62,8 +65,13 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "admin",
-    pattern: "Admin/{controller=Admin}/{action=Index}/{id?}",
-    defaults: new { controller = "Admin" }
+    pattern: "Admin/{controller=Admin}/{action=Course}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "student",
+    pattern: "Student/{action=Index}/{id?}",
+    defaults: new { controller = "Student" }
 );
 
 
@@ -71,5 +79,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
+
 
 app.Run();

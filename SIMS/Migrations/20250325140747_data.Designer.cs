@@ -12,7 +12,7 @@ using SIMS.Data;
 namespace SIMS.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250323185335_data")]
+    [Migration("20250325140747_data")]
     partial class data
     {
         /// <inheritdoc />
@@ -52,12 +52,7 @@ namespace SIMS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SemesterId")
-                        .HasColumnType("int");
-
                     b.HasKey("CourseId");
-
-                    b.HasIndex("SemesterId");
 
                     b.ToTable("Courses");
                 });
@@ -76,9 +71,6 @@ namespace SIMS.Migrations
                     b.Property<DateTime>("EnrolledAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("SemesterId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -89,8 +81,6 @@ namespace SIMS.Migrations
                     b.HasKey("EnrollmentId");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("SemesterId");
 
                     b.HasIndex("StudentId");
 
@@ -119,17 +109,12 @@ namespace SIMS.Migrations
                     b.Property<double>("Score")
                         .HasColumnType("float");
 
-                    b.Property<int>("SemesterId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("GradeId");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("SemesterId");
 
                     b.HasIndex("UserId");
 
@@ -197,27 +182,6 @@ namespace SIMS.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SIMS.Models.Semester", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("SemesterName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<DateTime>("Year")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Semesters");
-                });
-
             modelBuilder.Entity("SIMS.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -261,13 +225,6 @@ namespace SIMS.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("SIMS.Models.Course", b =>
-                {
-                    b.HasOne("SIMS.Models.Semester", null)
-                        .WithMany("Courses")
-                        .HasForeignKey("SemesterId");
-                });
-
             modelBuilder.Entity("SIMS.Models.Enrollment", b =>
                 {
                     b.HasOne("SIMS.Models.Course", "Course")
@@ -275,10 +232,6 @@ namespace SIMS.Migrations
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("SIMS.Models.Semester", null)
-                        .WithMany("Enrollments")
-                        .HasForeignKey("SemesterId");
 
                     b.HasOne("SIMS.Models.User", "Student")
                         .WithMany()
@@ -299,12 +252,6 @@ namespace SIMS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SIMS.Models.Semester", "Semester")
-                        .WithMany()
-                        .HasForeignKey("SemesterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SIMS.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -312,8 +259,6 @@ namespace SIMS.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
-
-                    b.Navigation("Semester");
 
                     b.Navigation("User");
                 });
@@ -343,13 +288,6 @@ namespace SIMS.Migrations
             modelBuilder.Entity("SIMS.Models.Role", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("SIMS.Models.Semester", b =>
-                {
-                    b.Navigation("Courses");
-
-                    b.Navigation("Enrollments");
                 });
 #pragma warning restore 612, 618
         }

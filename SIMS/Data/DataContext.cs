@@ -9,7 +9,7 @@ namespace SIMS.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Course> Courses { get; set; }
-        public DbSet<Semester> Semesters { get; set; }
+      
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Notification> Notifications { get; set; }
@@ -24,6 +24,7 @@ namespace SIMS.Data
                 new Role { RoleId = 2, RoleName = "Teacher" },
                 new Role { RoleId = 3, RoleName = "Student" }
             );
+            
         }
     }
 }

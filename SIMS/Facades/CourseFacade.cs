@@ -1,6 +1,39 @@
-﻿namespace SIMS.Facades
+﻿using SIMS.Facades;
+using SIMS.Models;
+using SIMS.Repositories;
+using System.Collections.Generic;
+
+public class CourseFacade : ICourseFacade
 {
-    public class CourseFacade
+    private readonly ICourseRepository _courseRepository;
+
+    public CourseFacade(ICourseRepository courseRepository)
     {
+        _courseRepository = courseRepository;
+    }
+
+    public void CreateCourse(Course course)
+    {
+        _courseRepository.CreateCourse(course);
+    }
+
+    public void UpdateCourse(Course course)
+    {
+        _courseRepository.UpdateCourse(course);
+    }
+
+    public void DeleteCourse(int id)
+    {
+        _courseRepository.DeleteCourse(id);
+    }
+
+    public Course GetCourseById(int id)
+    {
+        return _courseRepository.GetCourseById(id);
+    }
+
+    public IEnumerable<Course> GetAllCourses()
+    {
+        return _courseRepository.GetAllCourses();
     }
 }

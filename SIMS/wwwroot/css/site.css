@@ -1,52 +1,13 @@
-/* Background */
-/*body {
-    
-    font-family: 'Poppins', sans-serif;
-}*/
-
-/* Card Styling */
-/*.card {
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}*/
-
-/* Custom Button */
-/*.custom-btn {
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 50px;
-    transition: all 0.3s ease;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-    .custom-btn:hover {
-        transform: translateY(-2px);
-    }*/
-
-/* Social Buttons */
-/*.social-btn {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f1f1f1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+.nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
 }
 
-    .social-btn i {
-        font-size: 18px;
-        color: #555;
-    }
-
-    .social-btn:hover {
-        background-color: #ddd;
-    }*/
-
-/* Text Styling */
-/*.text-muted {
-    font-size: 14px;
-}*/
+.btn-outline-light {
+    font-size: 1rem;
+}

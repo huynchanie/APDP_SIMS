@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L0FqygoTHyDF5G79mE4OCLXvw+5sCJzD5AOWcWwk4Ms=",
+  "Hash": "BFBd89eNhryIUhxihfVzSP9bBT8wIFrFOwSA4gMvfNc=",
   "Source": "SIMS",
   "BasePath": "_content/SIMS",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2ys3y2n1v2",
-      "Integrity": "Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=",
+      "Fingerprint": "f8j6w8aw05",
+      "Integrity": "34aQEOA7DIJsKVTjaSLBJ+WKBMEkpo2vU3g1Qs58soE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1363,51 +1363,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.2ys3y2n1v2.css",
-      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "964"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:37:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2ys3y2n1v2"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1418,7 +1373,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "964"
+          "Value": "186"
         },
         {
           "Name": "Content-Type",
@@ -1426,11 +1381,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o=\""
+          "Value": "\"34aQEOA7DIJsKVTjaSLBJ+WKBMEkpo2vU3g1Qs58soE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 13:37:19 GMT"
+          "Value": "Tue, 25 Mar 2025 09:41:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1440,7 +1395,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Sg/fffyQ6m4f/iz0HQu4FwFbUL/7Yd+yz4HXjPoOr2o="
+          "Value": "sha256-34aQEOA7DIJsKVTjaSLBJ+WKBMEkpo2vU3g1Qs58soE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.f8j6w8aw05.css",
+      "AssetFile": "D:\\SE06303\\Kì5\\APDP\\SIMS\\SIMS\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "186"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"34aQEOA7DIJsKVTjaSLBJ+WKBMEkpo2vU3g1Qs58soE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 09:41:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f8j6w8aw05"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-34aQEOA7DIJsKVTjaSLBJ+WKBMEkpo2vU3g1Qs58soE="
         }
       ]
     },
@@ -6387,7 +6387,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
+          "Value": "Tue, 25 Mar 2025 16:05:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6432,7 +6432,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
+          "Value": "Tue, 25 Mar 2025 16:05:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6477,7 +6477,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
+          "Value": "Tue, 25 Mar 2025 16:05:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6514,7 +6514,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 24 Mar 2025 12:38:57 GMT"
+          "Value": "Tue, 25 Mar 2025 16:05:42 GMT"
         },
         {
           "Name": "Cache-Control",
