@@ -22,6 +22,18 @@ namespace SIMS.Controllers.Admin
         public IActionResult DashboardCourse()
         {
             var courses = _courseFacade.GetAllCourses();
+            if (User.IsInRole("Admin"))
+            {
+                ViewData["Layout"] = "~/Views/Shared/_LayoutHeader_Admin.cshtml";
+            }
+            else if (User.IsInRole("Teacher"))
+            {
+                ViewData["Layout"] = "~/Views/Shared/_LayoutHeader_Teacher.cshtml";
+            }
+            else if (User.IsInRole("Student"))
+            {
+                ViewData["Layout"] = "~/Views/Shared/_LayoutHeader_Student.cshtml";
+            }
             return View(courses);
         }
 

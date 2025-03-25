@@ -1,0 +1,20 @@
+﻿<nav class="navbar navbar-expand-lg" style="background-color: #F07025; color: #fff; padding: 10px 20px;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="@Url.Action("Index", "Dashboard")" style="color: #fff;">
+            🎓 SIMS Student
+        </a>
+
+        <!-- Menu -->
+        <div class="d-flex gap-4">
+            <a class="nav-link" href="@Url.Action("Index", "Student")" style="color: #fff;"> Dashboard</a>
+            <a class="nav-link" href="@Url.Action("DashboardCourse", "Course")" style="color: #fff;"> Khóa học của tôi</a>
+            <a class="nav-link" href="@Url.Action("MyGrades", "Grade")" style="color: #fff;"> Điểm số</a>
+        </div>
+
+        <!-- Đăng xuất -->
+        <div>
+            <a class="nav-link logout-link" href="@Url.Action("Login", "Account")" style="color: #fff;"> Đăng xuất</a>
+        </div>
+    </div>
+</nav>

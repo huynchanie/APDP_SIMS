@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var hideHeaderFooter = (bool?)ViewData["HideHeaderFooter"] ?? false;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,14 +13,36 @@
     <link rel="stylesheet" href="~/SIMS.styles.css" asp-append-version="true" />
 </head>
 <body>
-    
-    <div class="container">
+    @if (!hideHeaderFooter)
+    {
+        var roleHeader = User.IsInRole("Admin") ? "_LayoutHeader_Admin"
+        : User.IsInRole("Teacher") ? "_LayoutHeader_Teacher"
+        : User.IsInRole("Student") ? "_LayoutHeader_Student"
+        : null;
+
+        if (!string.IsNullOrEmpty(roleHeader))
+        {
+            @await Html.PartialAsync($"~/Views/Shared/{roleHeader}.cshtml")
+        }
+    }
+
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    
+    @if (!hideHeaderFooter)
+    {
+        <footer class="bg-light text-center text-lg-start py-3 border-top"
+                style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 10;">
+            <div class="container">
+                <span class="text-muted">© @DateTime.Now.Year SIMS - All Rights Reserved</span>
+            </div>
+        </footer>
+
+    }
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
