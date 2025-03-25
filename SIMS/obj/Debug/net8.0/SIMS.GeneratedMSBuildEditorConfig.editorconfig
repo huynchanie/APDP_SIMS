@@ -48,8 +48,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXERhc2hib2FyZENvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Course/UpdateCourse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFVwZGF0ZUNvdXJzZS5jc2h0bWw=
+[D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Course/DeleteCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXERlbGV0ZUNvdXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Course/EditCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEVkaXRDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Home/Index.cshtml]
@@ -66,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/SE06303/Kì5/APDP/SIMS/SIMS/Views/_ViewImports.cshtml]

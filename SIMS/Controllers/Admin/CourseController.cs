@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SIMS.Facades;
 using SIMS.Models;
@@ -17,6 +18,7 @@ namespace SIMS.Controllers.Admin
         }
 
         // Hiển thị danh sách khóa học
+        [Authorize(Roles = "Admin,Teacher,Student")]
         public IActionResult DashboardCourse()
         {
             var courses = _courseFacade.GetAllCourses();
@@ -24,6 +26,7 @@ namespace SIMS.Controllers.Admin
         }
 
         // Tạo khóa học mới - GET
+        [Authorize(Roles = "Admin,Teacher")]
         [HttpGet]
         public IActionResult CreateCourse()
         {
@@ -31,6 +34,7 @@ namespace SIMS.Controllers.Admin
         }
 
         // Tạo khóa học mới - POST
+        [Authorize(Roles = "Admin,Teacher")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult CreateCourse(Course course)
@@ -57,9 +61,10 @@ namespace SIMS.Controllers.Admin
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin,Teacher")]
+        // Chỉnh sửa khóa học - GET (Đã kết hợp với EditCourse)
         [HttpGet]
-        public IActionResult UpdateCourse(int id)
+        public IActionResult EditCourse(int id)
         {
             var course = _courseFacade.GetCourseById(id);
             if (course == null)
@@ -71,46 +76,36 @@ namespace SIMS.Controllers.Admin
         }
 
         // Chỉnh sửa khóa học - POST
+        [Authorize(Roles = "Admin,Teacher")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult UpdateCourse(Course course)
+        public IActionResult EditCourse(Course course)
         {
             if (course == null)
             {
                 _logger.LogWarning("Course model is null when updating.");
-                TempData["ErrorMessage"] = "Invalid course data.";
                 return BadRequest("Invalid course data.");
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                _logger.LogWarning("ModelState is NOT valid");
+                _logger.LogInformation("Model is valid. Saving course: {CourseName}", course.CourseName);
+                _courseFacade.EditCourse(course);
+                return RedirectToAction(nameof(DashboardCourse));
+            }
+            else
+            {
+                _logger.LogWarning("ModelState is NOT valid!");
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
                 {
                     _logger.LogWarning("Validation Error: {ErrorMessage}", error.ErrorMessage);
                 }
-                TempData["ErrorMessage"] = "Failed to update course. Please fix the errors.";
-                return View(course);
-            }
-
-            try
-            {
-                _courseFacade.UpdateCourse(course);
-                TempData["SuccessMessage"] = "Course updated successfully!";
-                _logger.LogInformation("Course with ID {Id} updated successfully", course.CourseId);
-                return RedirectToAction(nameof(DashboardCourse));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error updating course with ID {Id}", course.CourseId);
-                TempData["ErrorMessage"] = "An error occurred while updating the course.";
                 return View(course);
             }
         }
-        // Xóa khóa học - POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public IActionResult DeleteCourse(int id)
         {
             var course = _courseFacade.GetCourseById(id);
             if (course == null)
@@ -118,11 +113,27 @@ namespace SIMS.Controllers.Admin
                 _logger.LogWarning("Course with ID {Id} not found for deletion", id);
                 return NotFound();
             }
+            return View(course);
+        }
+
+        [HttpPost, ActionName("DeleteCourse")]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        public IActionResult ConfirmDeleteCourse(int id)
+        {
+            var course = _courseFacade.GetCourseById(id);
+            if (course == null)
+            {
+                _logger.LogWarning("Course with ID {Id} not found when confirming deletion", id);
+                return NotFound();
+            }
 
             _courseFacade.DeleteCourse(id);
-            _logger.LogInformation("Course with ID {Id} deleted", id);
+            TempData["SuccessMessage"] = $"Course '{course.CourseName}' deleted successfully!";
+            _logger.LogInformation("Course with ID {Id} deleted successfully", id);
 
             return RedirectToAction(nameof(DashboardCourse));
         }
+
     }
 }

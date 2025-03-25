@@ -17,9 +17,9 @@ public class CourseFacade : ICourseFacade
         _courseRepository.CreateCourse(course);
     }
 
-    public void UpdateCourse(Course course)
+    public void EditCourse(Course course)
     {
-        _courseRepository.UpdateCourse(course);
+        _courseRepository.EditCourse(course);
     }
 
     public void DeleteCourse(int id)

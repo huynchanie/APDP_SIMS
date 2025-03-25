@@ -8,7 +8,7 @@
 <div class="container">
     <h2 class="my-4">Edit Course</h2>
 
-    <form asp-action="UpdateCourse" method="post">
+    <form asp-action="EditCourse" method="post">
         @Html.AntiForgeryToken()
 
         <input type="hidden" asp-for="CourseId" />

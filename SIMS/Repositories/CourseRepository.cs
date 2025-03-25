@@ -40,7 +40,7 @@ namespace SIMS.Repositories
             }
         }
 
-        public void UpdateCourse(Course course)
+        public void EditCourse(Course course)
         {
             try
             {
@@ -55,7 +55,6 @@ namespace SIMS.Repositories
             }
         }
 
-
         public void DeleteCourse(int id)
         {
             var course = _context.Courses.Find(id);
@@ -63,7 +62,16 @@ namespace SIMS.Repositories
             {
                 _context.Courses.Remove(course);
                 _context.SaveChanges();
+                Console.WriteLine($"[CourseRepository] Course with ID {id} deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"[CourseRepository] Course with ID {id} not found.");
             }
         }
+
+
+
     }
 }
+

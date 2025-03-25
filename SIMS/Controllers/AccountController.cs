@@ -78,7 +78,7 @@ namespace SIMS.Controllers
                     case 2:
                         return RedirectToAction("Index", "Teacher");
                     case 3:
-                        return RedirectToAction("Course", "Student");
+                        return RedirectToAction("Index", "Student");
                     default:
                         return RedirectToAction("Index", "Home");
                 }
