@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SIMS.Models.Enrollment>
+
+@{
+    ViewData["Title"] = "Enrollments";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1050;">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h2>Enrollments</h2>
+
+<p>
+    <a asp-action="CreateEnrollment" class="btn btn-primary">Assign New Course</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Course Title</th>
+            <th>Enrolled At</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var enrollment in Model)
+        {
+            <tr>
+                <td>@enrollment.Student.FullName</td>
+                <td>@enrollment.Course.CourseName</td>
+                <td>@enrollment.EnrolledAt.ToString("yyyy-MM-dd")</td>
+                <td>@enrollment.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@enrollment.EnrollmentId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@enrollment.EnrollmentId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@enrollment.EnrollmentId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

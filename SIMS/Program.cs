@@ -16,10 +16,12 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
 //Add Facade
 builder.Services.AddScoped<IUserFacade, UserFacade>();
 builder.Services.AddScoped<ICourseFacade, CourseFacade>();
+builder.Services.AddScoped<IEnrollmentFacade, EnrollmentFacade>();
 // Add session
 builder.Services.AddSession();
 

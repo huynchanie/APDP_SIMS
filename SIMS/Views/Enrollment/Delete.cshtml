@@ -1,0 +1,19 @@
+﻿@model SIMS.Models.Enrollment
+
+@{
+    ViewData["Title"] = "Delete Enrollment";
+}
+
+<h2>Are you sure you want to delete this enrollment?</h2>
+
+<div>
+    <h4>Student: @Model.Student.FullName</h4>
+    <h4>Course: @Model.Course.CourseName</h4>
+    <h4>Status: @Model.Status</h4>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="EnrollmentId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
