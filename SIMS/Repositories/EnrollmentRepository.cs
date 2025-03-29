@@ -13,64 +13,56 @@ namespace SIMS.Repositories
 
         public EnrollmentRepository(DataContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _context = context;
         }
 
-        // Lấy tất cả các Enrollment
-        public IEnumerable<Enrollment> GetAllEnrollments()
+        public async Task<List<Enrollment>> GetAllEnrollmentsAsync()
         {
-            return _context.Enrollments
-                .Include(e => e.Student)
-                .Include(e => e.Course)
-                .AsNoTracking()
-                .ToList();
+            return await _context.Enrollments.Include(e => e.Student).Include(e => e.Course).ToListAsync();
         }
 
-        // Lấy Enrollment theo Id
-        public Enrollment GetEnrollmentById(int id)
+        public async Task<Enrollment> GetEnrollmentByIdAsync(int enrollmentId)
         {
-            return _context.Enrollments
-                .Include(e => e.Student)
-                .Include(e => e.Course)
-                .FirstOrDefault(e => e.EnrollmentId == id);
+            return await _context.Enrollments.FindAsync(enrollmentId);
         }
 
-        // Gán khóa học cho sinh viên
-        public void AssignEnrollment(Enrollment enrollment)
+        public async Task<List<Enrollment>> GetEnrollmentsByStudentIdAsync(int studentId)
         {
-            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
+            return await _context.Enrollments.Where(e => e.StudentId == studentId).ToListAsync();
+        }
 
+        public async Task<bool> AddEnrollmentAsync(Enrollment enrollment)
+        {
             _context.Enrollments.Add(enrollment);
-            _context.SaveChanges();
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        // Cập nhật thông tin Enrollment
-        public void UpdateEnrollment(Enrollment enrollment)
+        public async Task<bool> RemoveEnrollmentAsync(int enrollmentId)
         {
-            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
+            var enrollment = await _context.Enrollments.FindAsync(enrollmentId);
+            if (enrollment == null) return false;
 
-            var existingEnrollment = _context.Enrollments.FirstOrDefault(e => e.EnrollmentId == enrollment.EnrollmentId);
-
-            if (existingEnrollment != null)
-            {
-                existingEnrollment.StudentId = enrollment.StudentId;
-                existingEnrollment.CourseId = enrollment.CourseId;
-                existingEnrollment.Status = enrollment.Status;
-                existingEnrollment.EnrolledAt = enrollment.EnrolledAt;
-
-                _context.SaveChanges();
-            }
+            _context.Enrollments.Remove(enrollment);
+            return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<List<Course>> GetCoursesByStudentId(int studentId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId)
+                .Select(e => e.Course)
+                .ToListAsync();
         }
 
-        // Xóa Enrollment theo Id
-        public void DeleteEnrollment(int id)
+
+
+
+        public async Task<IEnumerable<Course>> GetStudentCoursesAsync(int studentId)
         {
-            var enrollment = _context.Enrollments.FirstOrDefault(e => e.EnrollmentId == id);
-            if (enrollment != null)
-            {
-                _context.Enrollments.Remove(enrollment);
-                _context.SaveChanges();
-            }
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId)
+                .Include(e => e.Course)
+                .Select(e => e.Course)
+                .ToListAsync();
         }
     }
 }

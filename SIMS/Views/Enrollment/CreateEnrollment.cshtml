@@ -17,43 +17,34 @@
         <h2 class="text-center mb-4" style="color: #2c3e50;">Assign Course to Student</h2>
 
         <form asp-action="CreateEnrollment" method="post">
-            <!-- Select Student -->
-            <div class="form-group mb-3">
-                <label asp-for="StudentId" class="form-label fw-bold" style="color: #34495e;">Student</label>
-                <select asp-for="StudentId" asp-items="ViewBag.Students" class="form-select" style="border-radius: 8px;">
-                    <option value="">-- Chọn sinh viên --</option>
-                </select>
+            <div class="form-group mb-2">
+                <label for="studentId">Select Student</label>
+                <select id="studentId" name="studentId" class="form-control" asp-items="ViewBag.Students"></select>
             </div>
-
-            <!-- Select Course -->
-            <div class="form-group mb-3">
-                <label asp-for="CourseId" class="form-label fw-bold" style="color: #34495e;">Course</label>
-                <select asp-for="CourseId" asp-items="ViewBag.Courses" class="form-select" style="border-radius: 8px;">
-                    <option value="">-- Chọn khóa học --</option>
-                </select>
+            <div class="form-group mb-2">
+                <label for="courseId">Select Course</label>
+                <select id="courseId" name="courseId" class="form-control" asp-items="ViewBag.Courses"></select>
             </div>
-
-            <!-- Select Status -->
-            <div class="form-group mb-4">
-                <label asp-for="Status" class="form-label fw-bold" style="color: #34495e;">Status</label>
-                <select asp-for="Status" class="form-select" style="border-radius: 8px; z-index: 1050;">
-                    <option value="">-- Chọn trạng thái --</option>
-                    <option value="Active">Active</option>
+            <div class="form-group mb-2">
+                <label for="status">Select Status</label>
+                <select id="status" name="status" class="form-control">
+                    <option value="">-- Select Status --</option>
+                    <option value="Confirmed">Pending</option>
+                    <option value="Approved">Confirmed</option>
+                    <option value="InProgress">InProgress</option>
                     <option value="Completed">Completed</option>
-                    <option value="Dropped">Dropped</option>
-                    <option value="Failed">Failed</option>
                 </select>
             </div>
 
-            <!-- Button Group -->
-            <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-success px-4 py-2" style="border-radius: 8px; background-color: #27ae60; border-color: #27ae60;">
-                    Assign
-                </button>
-                <a asp-action="Index" class="btn btn-secondary px-4 py-2" style="border-radius: 8px;">
-                    Cancel
-                </a>
+            <div class="form-group mb-2">
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
+            <div class="form-group mb-2">
+               <a>Cancel</a>
+            </div>
+
         </form>
+      
+
     </div>
 </div>

@@ -22,6 +22,7 @@ builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 builder.Services.AddScoped<IUserFacade, UserFacade>();
 builder.Services.AddScoped<ICourseFacade, CourseFacade>();
 builder.Services.AddScoped<IEnrollmentFacade, EnrollmentFacade>();
+
 // Add session
 builder.Services.AddSession();
 

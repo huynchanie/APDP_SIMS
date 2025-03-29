@@ -1,4 +1,6 @@
-﻿using SIMS.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SIMS.Data;
+using SIMS.Models;
 using SIMS.Repositories;
 using System;
 using System.Collections.Generic;
@@ -6,53 +8,42 @@ using System.Collections.Generic;
 namespace SIMS.Facades
 {
     public class EnrollmentFacade : IEnrollmentFacade
+
     {
+        private readonly IEnrollmentRepository _enrollmentRepo;
         private readonly IEnrollmentRepository _enrollmentRepository;
-
-        public EnrollmentFacade(IEnrollmentRepository enrollmentRepository)
+        public EnrollmentFacade(IEnrollmentRepository enrollmentRepo, IEnrollmentRepository enrollmentRepository)
         {
-            _enrollmentRepository = enrollmentRepository ?? throw new ArgumentNullException(nameof(enrollmentRepository));
+            _enrollmentRepo = enrollmentRepo;
+            _enrollmentRepository = enrollmentRepository;
         }
 
-        // Lấy tất cả Enrollment
-        public IEnumerable<Enrollment> GetAllEnrollments()
+        public async Task<bool> AssignStudentToCourseAsync(int studentId, int courseId, string status )
         {
-            return _enrollmentRepository.GetAllEnrollments();
-        }
-
-        // Lấy Enrollment theo Id
-        public Enrollment GetEnrollmentById(int id)
-        {
-            return _enrollmentRepository.GetEnrollmentById(id)
-                   ?? throw new KeyNotFoundException($"Enrollment with id {id} not found.");
-        }
-
-        // Tạo mới Enrollment
-        public void CreateEnrollment(Enrollment enrollment)
-        {
-            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
-            _enrollmentRepository.AssignEnrollment(enrollment);
-        }
-
-        // Cập nhật Enrollment
-        public void UpdateEnrollment(Enrollment enrollment)
-        {
-            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
-            _enrollmentRepository.UpdateEnrollment(enrollment);
-        }
-
-        // Xóa Enrollment theo Id
-        public void DeleteEnrollment(int id)
-        {
-            var enrollment = _enrollmentRepository.GetEnrollmentById(id);
-            if (enrollment != null)
+            var enrollment = new Enrollment
             {
-                _enrollmentRepository.DeleteEnrollment(id);
-            }
-            else
-            {
-                throw new KeyNotFoundException($"Enrollment with id {id} not found.");
-            }
+                StudentId = studentId,
+                CourseId = courseId,
+                Status = status,
+                EnrolledAt = DateTime.UtcNow
+            };
+
+            return await _enrollmentRepo.AddEnrollmentAsync(enrollment);
+        }
+
+        public async Task<List<Enrollment>> GetAllEnrollmentsAsync()
+        {
+            return await _enrollmentRepo.GetAllEnrollmentsAsync();
+        }
+
+        public async Task<IEnumerable<Course>> GetStudentCoursesAsync(int studentId, int courseId, string v)
+        {
+            return await _enrollmentRepo.GetStudentCoursesAsync(studentId);
+        }
+
+        public async Task<bool> RemoveEnrollmentAsync(int enrollmentId)
+        {
+            return await _enrollmentRepo.RemoveEnrollmentAsync(enrollmentId);
         }
     }
 }

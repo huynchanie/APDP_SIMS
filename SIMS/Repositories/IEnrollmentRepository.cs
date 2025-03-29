@@ -5,10 +5,11 @@ namespace SIMS.Repositories
 {
     public interface IEnrollmentRepository
     {
-        IEnumerable<Enrollment> GetAllEnrollments();
-        Enrollment GetEnrollmentById(int id);
-        void AssignEnrollment(Enrollment enrollment);
-        void UpdateEnrollment(Enrollment enrollment);
-        void DeleteEnrollment(int id);
+        Task<List<Enrollment>> GetAllEnrollmentsAsync();
+        Task<Enrollment> GetEnrollmentByIdAsync(int enrollmentId);
+        Task<List<Enrollment>> GetEnrollmentsByStudentIdAsync(int studentId);
+        Task<bool> AddEnrollmentAsync(Enrollment enrollment);
+        Task<bool> RemoveEnrollmentAsync(int enrollmentId);
+        Task<IEnumerable<Course>> GetStudentCoursesAsync(int studentId);
     }
 }
