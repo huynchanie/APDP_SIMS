@@ -50,7 +50,7 @@ namespace SIMS.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Remove(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await _enrollmentFacade.RemoveEnrollmentAsync(id);
             return RedirectToAction("Index");
