@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using SIMS.Data;
 using SIMS.Facades;
@@ -17,23 +18,25 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+builder.Services.AddScoped<IGradeRepository, GradeRepository>();
 
 //Add Facade
 builder.Services.AddScoped<IUserFacade, UserFacade>();
 builder.Services.AddScoped<ICourseFacade, CourseFacade>();
 builder.Services.AddScoped<IEnrollmentFacade, EnrollmentFacade>();
+builder.Services.AddScoped<IGradeFacade, GradeFacade>();
 
 // Add session
 builder.Services.AddSession();
 
-builder.Services.AddAuthentication("Cookies")
-    .AddCookie("Cookies", options =>
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
     {
-        options.LoginPath = "/Account/Login";
-        options.AccessDeniedPath = "/Account/AccessDenied";
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        options.LoginPath = "/Account/Login";  // Đường dẫn đến trang đăng nhập
+        options.LogoutPath = "/Account/Logout"; // Đường dẫn đến trang đăng xuất
+        options.ExpireTimeSpan = TimeSpan.FromDays(1); // Thời gian hết hạn cookie (1 ngày)
+        options.SlidingExpiration = true; // Cookie sẽ gia hạn mỗi khi người dùng truy cập
     });
-
 
 builder.Services.AddAuthorization();
 
@@ -76,6 +79,12 @@ app.MapControllerRoute(
     pattern: "Student/{action=Index}/{id?}",
     defaults: new { controller = "Student" }
 );
+app.MapControllerRoute(
+    name: "teacher",
+    pattern: "Teacher/{action=AssignGrade}/{id?}",
+    defaults: new { action = "AssignGrade" } 
+);
+
 
 
 app.MapControllerRoute(

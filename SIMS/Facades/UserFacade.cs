@@ -24,7 +24,7 @@ namespace SIMS.Facades
             {
                 FullName = fullName,
                 Email = email,
-                Password = password, // Không mã hóa mật khẩu
+                Password = password, 
                 RoleId = roleId,
                 Address = address,
                 PhoneNumber = phoneNumber,

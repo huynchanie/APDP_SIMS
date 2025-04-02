@@ -26,7 +26,6 @@ namespace SIMS.Controllers
         [HttpPost]
         public IActionResult Register(string fullName, string email, string password, int roleId, string address, string phoneNumber)
         {
-            roleId = 3;
             string result = _userFacade.RegisterUser(fullName, email, password, roleId, address, phoneNumber);
 
             if (result == "User registered successfully!")
@@ -39,6 +38,7 @@ namespace SIMS.Controllers
                 return View();
             }
         }
+
 
 
         [HttpGet]
@@ -90,8 +90,8 @@ namespace SIMS.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Admin");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); //Xóa cookie
+            return RedirectToAction("Login", "Account");
         }
 
 

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Manager Grade List";
+}
+
+<h2>Manager Grade List</h2>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <span></span>
+    <a href="@Url.Action("AssignGrade", "Grade")" class="btn btn-primary">Add new</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Grading Date</th>
+            <th>Notes</th>
+            <th>Teacher</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.GradeId</td>
+                <td>@grade.User.FullName</td>
+                <td>@grade.Course.CourseName</td>
+                <td>@grade.Score</td>
+                <td>@grade.CreateTime.ToString("yyyy-MM-dd")</td>
+                <td>@grade.Comment</td>
+                <td>@grade.User.Teacher</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Grade", new { id = grade.GradeId })" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="@Url.Action("Delete", "Grade", new { id = grade.GradeId })" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

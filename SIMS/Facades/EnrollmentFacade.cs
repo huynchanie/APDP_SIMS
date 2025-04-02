@@ -40,10 +40,16 @@ namespace SIMS.Facades
         {
             return await _enrollmentRepo.GetStudentCoursesAsync(studentId);
         }
+        public async Task<Enrollment> GetEnrollmentByIdAsync(int enrollmentId)
+        {
+            return await _enrollmentRepo.GetEnrollmentByIdAsync(enrollmentId);
+        }
 
         public async Task<bool> RemoveEnrollmentAsync(int enrollmentId)
         {
             return await _enrollmentRepo.RemoveEnrollmentAsync(enrollmentId);
         }
+      
+
     }
 }
