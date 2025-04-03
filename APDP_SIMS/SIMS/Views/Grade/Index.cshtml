@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SIMS.Models.Grade>
+
+@{
+    ViewData["Title"] = "Danh sách điểm";
+}
+
+<div class="container mt-4">
+    <h2>Danh sách điểm sinh viên</h2>
+
+    @if (ViewBag.GradeCount != null)
+    {
+        <div class="alert alert-info">
+            <strong>Thông tin:</strong> Đang hiển thị @ViewBag.GradeCount bản ghi điểm.
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <span></span>
+        <a href="@Url.Action("AssignGrade", "Grade")" class="btn btn-primary">Thêm điểm mới</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Sinh viên</th>
+                    <th>Khóa học</th>
+                    <th>Điểm</th>
+                    <th>Ngày cập nhật</th>
+                    <th>Ghi chú</th>
+                    <th>Giảng viên</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var grade in Model)
+                    {
+                        <tr>
+                            <td>@grade.GradeId</td>
+                            <td>@(grade.User?.FullName ?? "N/A")</td>
+                            <td>@(grade.Course?.CourseName ?? "N/A")</td>
+                            <td>@grade.Score</td>
+                            <td>@grade.CreateTime.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@(string.IsNullOrEmpty(grade.Comment) ? "Không có" : grade.Comment)</td>
+                            <td>@ViewBag.TeacherName</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Grade", new { id = grade.GradeId })" class="btn btn-warning btn-sm">Sửa</a>
+                                <a href="@Url.Action("Delete", "Grade", new { id = grade.GradeId })" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa điểm này?');">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="text-center">Không có dữ liệu điểm.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@model IEnumerable<SIMS.Models.Enrollment>
+
+@{
+    ViewData["Title"] = "Danh sách đăng ký khóa học";
+}
+
+<h2>Danh sách đăng ký khóa học</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Sinh viên</th>
+            <th>Khóa học</th>
+            <th>Trạng thái</th>
+            <th>Ngày đăng ký</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var enrollment in Model)
+            {
+                <tr>
+                    <td>@enrollment.EnrollmentId</td>
+                    <td>@enrollment.Student?.FullName (@enrollment.StudentId)</td>
+                    <td>@enrollment.Course?.CourseName (@enrollment.CourseId)</td>
+                    <td>@enrollment.Status</td>
+                    <td>@enrollment.EnrolledAt.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">Không có dữ liệu đăng ký khóa học</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mt-3">
+    <a href="@Url.Action("AssignGrade", "Grade")" class="btn btn-primary">Quay lại gán điểm</a>
+</div> 

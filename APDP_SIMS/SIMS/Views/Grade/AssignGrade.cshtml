@@ -1,0 +1,106 @@
+﻿@model SIMS.Models.Grade
+
+@{
+    ViewData["Title"] = "Gán điểm cho sinh viên";
+}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 40%;">
+        <h2 class="text-center mb-4">Gán điểm cho sinh viên</h2>
+        
+        @if (ViewBag.EnrollmentCount != null && ViewBag.StudentCount != null)
+        {
+            <div class="alert alert-info mb-3">
+                <strong>Thông tin:</strong> Hệ thống có @ViewBag.StudentCount sinh viên, @ViewBag.CourseCount khóa học, và @ViewBag.EnrollmentCount đăng ký.
+                <a asp-action="Enrollments" class="alert-link">Xem danh sách đăng ký</a>
+            </div>
+        }
+        
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @ViewBag.ErrorMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        
+        @if (ViewBag.DebugInfo != null)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @ViewBag.DebugInfo
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        
+        @if (ViewBag.ErrorDetail != null)
+        {
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <strong>Chi tiết lỗi:</strong> @ViewBag.ErrorDetail
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        
+        <form asp-action="AssignGrade" method="post">
+            <div asp-validation-summary="All" class="text-danger mb-3"></div>
+            
+            <div class="mb-3">
+                <label class="form-label">Sinh viên</label>
+                <select asp-for="UserId" id="UserId" class="form-select" asp-items="ViewBag.Students" required>
+                    <option value="">-- Chọn sinh viên --</option>
+                </select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Khóa học</label>
+                <select asp-for="CourseId" id="CourseId" class="form-select" asp-items="ViewBag.Courses" required>
+                    <option value="">-- Chọn khóa học --</option>
+                </select>
+                <span asp-validation-for="CourseId" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Điểm số</label>
+                <input asp-for="Score" type="number" min="0" max="100" step="1" class="form-control" required />
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Ghi chú</label>
+                <textarea asp-for="Comment" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Giảng viên</label>
+                <input type="text" class="form-control" value="@ViewBag.TeacherName" readonly />
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Lưu điểm</button>
+                <div>
+                    <a asp-action="Enrollments" class="btn btn-info">Xem đăng ký</a>
+                    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function() {
+            // Enable client-side validation
+            $('form').validate();
+        });
+    </script>
+}
