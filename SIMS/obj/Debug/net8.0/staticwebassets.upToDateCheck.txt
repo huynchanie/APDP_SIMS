@@ -1,6 +1,8 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\loggo.jpg
+wwwroot\img\pic2.avif
+wwwroot\img\pic2.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

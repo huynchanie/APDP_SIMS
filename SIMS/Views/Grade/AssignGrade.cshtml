@@ -5,41 +5,36 @@
 }
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow-lg p-4" style="width: 50%;">
+    <div class="card shadow-lg p-4" style="width: 40%;">
         <h2 class="text-center mb-4">Add Grade</h2>
         <form asp-action="AssignGrade" method="post">
             <div class="mb-3">
-                <label for="Student" class="form-label">Student</label>
+                <label class="form-label">Student</label>
                 <select asp-for="UserId" class="form-select" asp-items="ViewBag.Students">
                     <option value="">-- Select Student --</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label for="Course" class="form-label">Course</label>
+                <label class="form-label">Course</label>
                 <select asp-for="CourseId" class="form-select" asp-items="ViewBag.Courses">
                     <option value="">-- Select Course --</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label for="Score" class="form-label">Grade</label>
+                <label class="form-label">Grade</label>
                 <input asp-for="Score" type="number" min="0" max="100" step="1" class="form-control" required />
             </div>
 
             <div class="mb-3">
-                <label for="CreateTime" class="form-label">Grading Date</label>
-                <input asp-for="CreateTime" type="date" class="form-control" required />
-            </div>
-
-            <div class="mb-3">
-                <label for="Comment" class="form-label">Notes</label>
+                <label class="form-label">Notes</label>
                 <textarea asp-for="Comment" class="form-control" rows="3"></textarea>
             </div>
 
             <div class="mb-3">
-                <label for="Teacher" class="form-label">Teacher</label>
-                <input type="text" class="form-control" id="teacherName" value="@ViewBag.TeacherName" readonly />
+                <label class="form-label">Teacher</label>
+                <input type="text" class="form-control" value="@ViewBag.TeacherName" readonly />
             </div>
 
             <div class="d-flex justify-content-between">
@@ -49,10 +44,3 @@
         </form>
     </div>
 </div>
-
-<script>
-    document.getElementById("UserId").addEventListener("change", function () {
-        var selectedStudentId = this.value;
-        var studentName = this.options[this.selectedIndex].text;
-    });
-</script>

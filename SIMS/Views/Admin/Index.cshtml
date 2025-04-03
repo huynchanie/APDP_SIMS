@@ -1,37 +1,74 @@
 ﻿@{
     ViewData["Title"] = "Admin Dashboard";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Student Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<div class="container mt-5">
-  
-    
-    <div class="row">
-        <!-- Quản lý người dùng -->
-        <div class="col-md-3">
-            <a asp-controller="User" asp-action="Index" class="btn btn-primary btn-block">
-                Quản lý người dùng
-            </a>
-        </div>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #fefaf6;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-        <!-- Quản lý khóa học -->
-        <div class="col-md-3">
-            <a asp-controller="Course" asp-action="DashboardCourse" class="btn btn-success btn-block">
-                Quản lý khóa học
-            </a>
-        </div>
+        .center-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        <!-- Quản lý kỳ học -->
-        <div class="col-md-3">
-            <a asp-controller="Semester" asp-action="Index" class="btn btn-warning btn-block">
-                Quản lý kỳ học
-            </a>
-        </div>
+        .quote {
+            text-align:center;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #222;
+        }
 
-        <!-- Quản lý điểm -->
-        <div class="col-md-3">
-            <a asp-controller="Score" asp-action="Index" class="btn btn-danger btn-block">
-                Quản lý điểm
-            </a>
+            .quote span {
+                color: #ff7a00;
+                font-weight: 600;
+            }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #001f3f;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+       
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid center-wrapper">
+        <div class="row align-items-center w-100">
+          
+            <div class="col-md-6 text-center">
+                <img src="~/img/pic2.png" class="img-fluid" alt="Student Illustration" />
+            </div>
+
+           
+            <div class="col-md-6">
+                <p class="quote">
+                    “However difficult life may seem, there is <span>always something you can do</span> and succeed at.”
+                </p>
+                <p class="quote-author">— STEVEN HAWKING</p>
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>

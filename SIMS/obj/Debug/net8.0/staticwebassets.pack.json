@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\img\\loggo.jpg"
     },
     {
+      "Id": "D:\\APDP_SIMS\\SIMS\\wwwroot\\img\\pic2.avif",
+      "PackagePath": "staticwebassets\\img\\pic2.avif"
+    },
+    {
+      "Id": "D:\\APDP_SIMS\\SIMS\\wwwroot\\img\\pic2.png",
+      "PackagePath": "staticwebassets\\img\\pic2.png"
+    },
+    {
       "Id": "D:\\APDP_SIMS\\SIMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
